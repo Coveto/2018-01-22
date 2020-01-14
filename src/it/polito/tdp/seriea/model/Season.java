@@ -1,10 +1,10 @@
 package it.polito.tdp.seriea.model;
 
-public class Season {
+public class Season implements Comparable<Season> {
 	private int season;
 	private String description;
 
-	public Season(int season, String description) {
+	public Season(int season, String description)  {
 		super();
 		this.season = season;
 		this.description = description;
@@ -80,6 +80,11 @@ public class Season {
 	@Override
 	public String toString() {
 		return description;
+	}
+
+	@Override
+	public int compareTo(Season o) {
+		return this.season-o.season;
 	}
 
 }
